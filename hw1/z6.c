@@ -1,85 +1,80 @@
 #include <stdio.h>
 #include <limits.h>
+
 int main()
 {
-int n,i,a,b;
-int p=0;
-scanf("%d%d", &a, &b);
-int r=b-a+1;
-i=0;
-int A[r];
-for (int w=a; w<b+1; w+=1)
-{//printf("%d  ",w);
+    int n,i,a,b;
+    int p=0;
+    scanf("%d%d", &a, &b);
 
-n=w;
+    int r = b - a + 1;
 
-int k =0;
+    i = 0;
 
+    int A[r];
 
-while (n!=1)
-{
-    if (n%2==1)
-        {
-        n=3*n+1;
-        k++;
+    for (int w = a; w < b + 1; w+ = 1)
+    {
+        n = w;
+
+        int k = 0;
+
+        while (n! = 1)
+       {
+           if (n%2 == 1)
+           {
+               n = 3 * n + 1;
+
+               k++;
+            }
+
+            else
+            {
+            	n = n / 2;
+
+                k++;
+            }
         }
-    else
-    {n=n/2;
-     k++;
+
+        k = k + 1;
+        A[i] = k;
+
+        i+ = 1;           
     }
 
-}
-k=k+1;
-A[i]=k;
+    int q = 0;
 
-i+=1;
-        //printf("\n");
-        //printf("Length = %d ",k);
-         
-}
+    for (int j = 0; j < r; j+ = 1)
 
-//printf("\n");
-//for (int j =0; j<r; j+=1)
-//printf("%d ",A[j]);
-//printf("\n");
+   {
+	    if (A[j] > q) 
+        q = A[j];}
 
+        int t;
 
-int q=0;
-for (int j =0; j<r; j+=1)
-{if (A[j]>q)
-q=A[j];}
-//printf("\n");
-//printf("%d  ",q);
+        for (int j = 0; j < r; j+ = 1)
+        {
+        	if (A[j] == q)
+            t = j;
+        }
 
+    int u = 0;
+    int B[r];
 
-int t;
+    for (int w = a; w < b + 1; w+ = 1)
+    {
+    	B[u] = w;
 
-for (int j =0; j<r; j+=1)
-{if (A[j]==q)
-t=j;}
+        u++;
+    }
 
-//printf("%d  ",t);
+    for (int i = 0; i < r; i+ = 1)
+    { 
+    	if (i == t)
+        printf("%d  ", B[i]);
+    }
 
-int u =0;
-int B[r];
-for (int w=a; w<b+1; w+=1)
-{B[u]=w;
-u++;
-}
-
-//for (int j =0; j<r; j+=1)
-//printf("%d ",B[j]);
-
-
-//printf("%d  ",t);
-for (int i=0; i<r; i+=1)
-{ if (i==t)
-printf("%d  ",B[i]);
-}
-printf("%d  ",q);
+    printf("%d  ", q);
+    
     return 0;
 }
-
-
-
-
