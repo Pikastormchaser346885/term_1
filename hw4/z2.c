@@ -6,7 +6,8 @@
 #include <string.h>
 #define MAX 100
 
-unsigned long long fact(unsigned long long n, unsigned long long limit) {
+unsigned long long fact(unsigned long long n, unsigned long long limit) 
+{
     unsigned long long result = 1;
 
     for (int i = 1; i <= n; ++i)
@@ -15,8 +16,10 @@ unsigned long long fact(unsigned long long n, unsigned long long limit) {
         {
             return result;
         }
+
         result *= i;
     }
+
     return result;
 }
 
@@ -30,8 +33,10 @@ int main()
     unsigned long long n1 = fact(n, LIMIT);
     unsigned long long n_k = fact(n - k, LIMIT);
     unsigned long long result = n1 / n_k;
+
     printf("%llu\n", result);
 
     printf("\n");
+    
     return 0;
 }
